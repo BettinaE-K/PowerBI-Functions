@@ -1,0 +1,15 @@
+//fn_StringToAcronym as a single line for use as a query step rather than an invoked function - nested for readability
+
+Text.Replace(
+	Text.Remove(
+		Text.Replace(
+			Text.Proper(
+				Text.Remove(
+					Text.Trim(
+						Text.Clean([ColumnName])
+					),
+				{"'"})
+			),
+		" And "," "),
+	{"a".."z","0".."9","(",")",",",".","-","&","£"}), //add in any other unwanted characters here
+"  "," ")
