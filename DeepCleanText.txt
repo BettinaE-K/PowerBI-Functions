@@ -1,0 +1,19 @@
+//fn_Deep Clean as a single line for use as a query step rather than an invoked function - nested for readability
+
+Text.Proper(
+	Text.Replace(
+		Text.Replace(
+			Text.Replace(
+				Text.Replace(
+					Text.Replace(
+						Text.Replace(
+							Text.Trim(
+								Text.Clean([ColumnName])
+							),
+						") ,","),"),
+					") .",")."),
+				" .","."),
+			" ,",","),
+		"  "," "),
+	"  "," ")
+)
